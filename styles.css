@@ -1,9 +1,12 @@
 :root {
   --color-white: #ffffff;
+  --color-light-white: rgb(255, 255, 255, 0.5);
   --color-blue-dark: #2364db;
   --color-blue-light: #3579f5;
   --color-blue-text: #4777ed;
   --color-button-light: #f4f8ff;
+
+  --progress: 7%;
 }
 
 * {
@@ -32,22 +35,48 @@ html {
   border-radius: 0.5rem;
 }
 
-.todo__count {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 6rem;
+.todo__progress-bar {
+  position: relative;
+  min-width: 6rem;
   height: 6rem;
+
+  z-index: 10;
+
   border-radius: 50%;
-  border: 0.2rem solid var(--color-white);
+  background: radial-gradient(
+      closest-side,
+      var(--color-blue-light) 90%,
+      transparent 92% 100%
+    ),
+    conic-gradient(
+      var(--color-white) var(--progress),
+      var(--color-blue-light) 0
+    );
+}
+
+.todo__progress-bar::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0.13rem;
+  top: 0.13rem;
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 50%;
+  z-index: 1;
+
+  border: 1px solid var(--color-light-white);
 }
 
 .count {
+  position: absolute;
+  top: 1.9rem;
+  left: 1.4rem;
   font-weight: 400;
   font-size: 2rem;
 }
 
-.todo__task_type {
+.todo__task-type {
   display: inline-block;
   padding: 0 1.3rem;
   border-radius: 5rem;
@@ -59,14 +88,14 @@ html {
   background-color: var(--color-blue-dark);
 }
 
-.todo__task_status {
+.todo__task-status {
   margin: 0.4rem 0;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 600;
 }
 
-.todo__task_tasks {
+.todo__task-tasks {
   font-size: 1.2rem;
   line-height: 1.8rem;
   font-weight: 400;
