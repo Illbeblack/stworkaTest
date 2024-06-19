@@ -6,6 +6,9 @@
   --color-blue-text: #4777ed;
   --color-button-light: #f4f8ff;
 
+  --regular: 400;
+  --semi-bold: 600;
+
   --progress: 7%;
 }
 
@@ -72,7 +75,7 @@ html {
   position: absolute;
   top: 1.9rem;
   left: 1.4rem;
-  font-weight: 400;
+  font-weight: var(--regular);
   font-size: 2rem;
 }
 
@@ -83,7 +86,7 @@ html {
 
   font-size: 1.2rem;
   line-height: 1.8rem;
-  font-weight: 400;
+  font-weight: var(--regular);
 
   background-color: var(--color-blue-dark);
 }
@@ -92,13 +95,13 @@ html {
   margin: 0.4rem 0;
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: 600;
+  font-weight: var(--semi-bold);
 }
 
 .todo__task-tasks {
   font-size: 1.2rem;
   line-height: 1.8rem;
-  font-weight: 400;
+  font-weight: var(--regular);
 }
 
 .todo__button {
@@ -109,6 +112,30 @@ html {
 
   font-size: 1.4rem;
   line-height: 2rem;
-  font-weight: 400;
+  font-weight: var(--regular);
   color: var(--color-blue-text);
+}
+
+.example-container {
+  container-type: inline-size;
+  margin-top: 3rem;
+  width: 50vw;
+}
+
+@media (max-width: 340px) {
+  .todo__progress-bar {
+    display: none;
+  }
+}
+
+@container (max-width: 340px) {
+  .todo__progress-bar {
+    display: none;
+  }
+}
+
+@container (max-width: 260px) {
+  .todo {
+    flex-direction: column;
+  }
 }
