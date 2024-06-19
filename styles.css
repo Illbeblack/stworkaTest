@@ -1,3 +1,11 @@
+:root {
+  --color-white: #ffffff;
+  --color-blue-dark: #2364db;
+  --color-blue-light: #3579f5;
+  --color-blue-text: #4777ed;
+  --color-button-light: #f4f8ff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,4 +17,69 @@ html {
   box-sizing: border-box;
 
   font-family: 'Inter', sans-serif;
+  color: var(--color-white);
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+
+  gap: 3rem;
+
+  background-color: var(--color-blue-light);
+  border-radius: 0.5rem;
+}
+
+.todo__count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  border: 0.2rem solid var(--color-white);
+}
+
+.count {
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.todo__task_type {
+  display: inline-block;
+  padding: 0 1.3rem;
+  border-radius: 5rem;
+
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  font-weight: 400;
+
+  background-color: var(--color-blue-dark);
+}
+
+.todo__task_status {
+  margin: 0.4rem 0;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+.todo__task_tasks {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  font-weight: 400;
+}
+
+.todo__button {
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--color-button-light);
+
+  font-size: 1.4rem;
+  line-height: 2rem;
+  font-weight: 400;
+  color: var(--color-blue-text);
 }
