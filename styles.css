@@ -114,6 +114,13 @@ html {
   line-height: 2rem;
   font-weight: var(--regular);
   color: var(--color-blue-text);
+
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+}
+
+.todo__button:hover {
+  background-color: var(--color-white);
 }
 
 .example-container {
